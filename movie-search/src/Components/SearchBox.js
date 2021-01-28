@@ -1,21 +1,21 @@
 import React from 'react';
-import './Header.css';
-import { useState } from 'react/cjs/react.development';
-import SearchIcon from '@material-ui/icons/Search';
+import './Components.css';
 
 
-const SearchBox = () => {
+const SearchBox = ({input, search}) => {
   
     return (
         <div className='search'>
             <div className = 'btn-search'>
-                <h1>Find your movie</h1>
+                <h1 className='search-title'>Find your movie</h1>
             </div>
             <div className='search-section'>
                 <input
                     type='text'
                     className= 'search-box'
-                    placeholder= 'Find your movie'
+                    placeholder= 'Find your movie...'
+                    onChange= { input }
+                    onKeyPress= { search }
                 />
             </div>
             
