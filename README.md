@@ -32,3 +32,7 @@ Then copy/paste
 ```bash
 SKIP_PREFLIGHT_CHECK=true
 ```
+
+### Logo
+
+Provide by [PNG Tree](fr.pngtree.com)
