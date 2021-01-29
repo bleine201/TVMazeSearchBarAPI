@@ -1,19 +1,17 @@
 import React, { useState } from 'react/cjs/react.development';
 import axios from 'axios';
-import MovieResults from './MovieResults';
-import './Components.css';
+import MovieResults from '../Movies/MovieResults';
+import SearchIcon from '@material-ui/icons/Search';
+import '../style/Components.css';
 
 
 const SearchBox = () => {
-     //State for search parameter (input & search)
+
   const [state, setState] = useState ({
-    //Blank string to insert data in the search box
     s:'',
-    //Empty array for display th result from the API
     movies: [],
   })
 
-  //Save value inside input
   const input = (e) => {
     let s = e.target.value;
 
@@ -21,10 +19,8 @@ const SearchBox = () => {
       return { ...prevState, s: s}
     });
 
-    //console.log(state.s)
   }
 
-  //Search request with API data
   const search = (e) => {
     if (e.key === 'Enter') {
       axios('https://api.tvmaze.com/search/shows?q=' + state.s).then(({data}) => {
@@ -33,8 +29,6 @@ const SearchBox = () => {
         setState(prevState => {
           return { ...prevState, movies: movies }
         })
-
-        //console.log(movies);
       });
     }
   }
@@ -42,21 +36,21 @@ const SearchBox = () => {
     return (
         <div className='search'>
             <div className = 'btn-search'>
-                <h1 className='search-title'>Find your movie</h1>
+                <h2 className='search-h2'><SearchIcon /> Looking for a show for tonight?</h2>
             </div>
             <div className='search-section'>
                 <input
                     type='text'
                     className= 'search-box'
-                    placeholder= 'Find your movie...'
+                    placeholder= 'Find your tv show...'
                     onChange= { input }
                     onKeyPress= { search }
                 />
             </div>
-            <div>
+            <div className='all-result'>
                 <MovieResults movies={state.movies}/>
             </div>
-            
+
         </div>
     );
 };
