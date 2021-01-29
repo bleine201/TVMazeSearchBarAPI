@@ -17,14 +17,12 @@ const Movie = ({ match }) => {
         })
     }, [api])
 
-        
-    //debugger
     if(movie.length === 0) {
         return <CachedIcon />
     }
 
     const DEFAULT_IMAGE = 'https://via.placeholder.com/210x295';
-    const DEFAULT_VALUE = 'UNKNOW'
+    const DEFAULT_VALUE = 'None'
 
         if(movie.image === null) {
             movie.image = { medium: DEFAULT_IMAGE};
@@ -55,13 +53,14 @@ const Movie = ({ match }) => {
                 <img src={movie.image.medium} alt='movie poster'/>
             </div>
             <div className='movie-info'>
-                <ul>
-                    <li>Network: {movie.network.name}</li>
-                    <li>Language: {movie.language}</li>
-                    <li>Genres: {movie.genres[0]} {movie.genres[1]} {movie.genres[2]} </li>
-                    <li>Rating: {movie.rating.average}</li>
-                    <li>Premiere: {movie.premiered}</li>
-                    <li>Status: {movie.status}</li>
+                <ul className='info'>
+                    
+                    <li><b>Network:</b> {movie.network.name} </li>
+                    <li><b>Language:</b> {movie.language}</li>
+                    <li><b>Genres:</b> {movie.genres[0]} {movie.genres[1]} {movie.genres[2]} </li>
+                    <li><b>Rating:</b> {movie.rating.average}</li>
+                    <li><b>Premiere:</b> {movie.premiered}</li>
+                    <li><b>Status:</b> {movie.status}</li>
                 </ul>
 
             </div>

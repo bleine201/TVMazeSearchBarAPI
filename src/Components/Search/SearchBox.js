@@ -36,7 +36,7 @@ const SearchBox = () => {
     return (
         <div className='search'>
             <div className = 'btn-search'>
-                <h2 className='search-h2'><SearchIcon /> Looking for a show for tonight?</h2>
+                <h1 className='search-h2'><SearchIcon /> Looking for a show for tonight?</h1>
             </div>
             <div className='search-section'>
                 <input
