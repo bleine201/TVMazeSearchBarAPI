@@ -1,20 +1,17 @@
 import React from 'react';
 
-const MoviePoster = ({ movie, image }) => {
+const MoviePoster = ({ movie }) => {
 
-    if(movie === null ) {
-        let image;
-        image = <img src='#' alt='movie-poster' className='poster' />;
-        return image;
-    }
+    const DEFAULT_POSTER = 'https://www.joblo.com/assets/images/joblo/database-specific-img-225x333.jpg';
+
+        if(movie.show.image === null) {
+            movie.show.image = { medium: DEFAULT_POSTER};
+        } 
 
     return (
             <div className='movie-poster'>
             <img src={movie.show.image.medium} alt='movie-poster' className='poster' />
-            {image}
         </div>
-
-        
     );
 };
 
