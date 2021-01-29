@@ -2,7 +2,7 @@ import React from 'react';
 
 const MoviePoster = ({ movie }) => {
 
-    const DEFAULT_POSTER = 'https://www.joblo.com/assets/images/joblo/database-specific-img-225x333.jpg';
+    const DEFAULT_POSTER = 'https://via.placeholder.com/210x295';
 
         if(movie.show.image === null) {
             movie.show.image = { medium: DEFAULT_POSTER};
