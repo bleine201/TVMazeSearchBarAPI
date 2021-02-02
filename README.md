@@ -9,7 +9,7 @@
 ### Git clone
 
 ```bash
-git clone git@github.com:bleine201/Nobo_technical_test.git
+git clone git@github.com:bleine201/TVMazeSearchBarAPI.git
 ```
 
 ### Running App
